@@ -1,0 +1,15 @@
+.items-container {
+  width: 100%;
+}
+.title-container{
+    background-color: red;
+    height: 20px;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+.button-container button {
+  width: 150px;
+}
+

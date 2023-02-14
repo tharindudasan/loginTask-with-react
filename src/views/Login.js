@@ -24,10 +24,6 @@ function Login() {
 
     let navigate = useNavigate();
 
-    const passwordValidate = new RegExp(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
-    );
-
     let isError = false;
     let isPasswordError = false;
     let isLogin = userName == uName && password === pswrd;
@@ -49,17 +45,13 @@ function Login() {
                     toast.error("password Wrong");
                     <Toast />;
                 }
-
             }
         }
     };
     return (
         <div className="center-div">
             <div className="register-container">
-                {uName}
-                <br />
-                {pswrd}
-                <h2>Login</h2>
+                {console.log({ uName })}{console.log({ pswrd })}<h2>Login</h2>
                 <FormControl isInvalid={isError}>
                     <FormLabel>Username</FormLabel>
                     <Input
@@ -75,7 +67,6 @@ function Login() {
                         <FormErrorMessage>User Name Wrong</FormErrorMessage>
                     )}
                 </FormControl>
-
                 <FormControl isInvalid={isPasswordError}>
                     <FormLabel>Password</FormLabel>
                     <Input
@@ -91,7 +82,6 @@ function Login() {
                         <FormErrorMessage>password Wrong</FormErrorMessage>
                     )}
                 </FormControl>
-
                 <div className="button-container">
                     <a onClick={handlerLogin}>
                         <Button colorScheme={"blue"} variant="outline">

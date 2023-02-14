@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Register from './views/Register'
+import AdminPage from "./views/AdminPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/admin" element={<AdminPage />}></Route>
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
