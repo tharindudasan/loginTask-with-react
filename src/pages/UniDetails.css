@@ -1,0 +1,14 @@
+
+
+.uni-item-container {
+  margin: 2px;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 10px;
+  border: 1px solid blue;
+  border-radius: 15px;
+  width: 50%;
+}
+.uni-item-url:hover {
+  cursor: pointer;
+}

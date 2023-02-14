@@ -7,9 +7,18 @@
 }
 .button-container {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: left;
 }
 .button-container button {
   width: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-
+.data-container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap:5px;
+}
