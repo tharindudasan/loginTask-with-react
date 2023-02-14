@@ -23,24 +23,33 @@ function Login() {
     const pswrd = location.state.password;
 
     let navigate = useNavigate();
-    const isError = userName.length < 8 && userName.trim() !== "";
+
     const passwordValidate = new RegExp(
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
     );
 
-    const isPasswordError =
-        !passwordValidate.test(password) && password.trim() !== "";
-    let isLogin = (userName == uName && password === pswrd);
+    let isError = false;
+    let isPasswordError = false;
+    let isLogin = userName == uName && password === pswrd;
     const handlerLogin = () => {
         {
-            if (isLogin) {// navigate(`/admin`);
-                toast.success('success')
-                console.log("wade hari")
+            if (isLogin) {
+                navigate(`/admin`);
+                toast.success("success");
+                console.log("wade hari");
             } else {
-                // if ()
-                console.log("asword  username  error");
-                toast.error("user name & password error");
-                <Toast />;
+                if (userName !== uName) {
+                    console.log("un wrong");
+                    isError = true;
+                    toast.error("User Name Wrong");
+                    <Toast />;
+                } else {
+                    console.log("pawsword wrong");
+                    isPasswordError = true;
+                    toast.error("password Wrong");
+                    <Toast />;
+                }
+
             }
         }
     };
@@ -63,7 +72,7 @@ function Login() {
                     {!isError ? (
                         <FormHelperText></FormHelperText>
                     ) : (
-                        <FormErrorMessage>Length should be 8 Charchters</FormErrorMessage>
+                        <FormErrorMessage>User Name Wrong</FormErrorMessage>
                     )}
                 </FormControl>
 
@@ -79,7 +88,7 @@ function Login() {
                     {!isPasswordError ? (
                         <FormHelperText></FormHelperText>
                     ) : (
-                        <FormErrorMessage>InValid Password</FormErrorMessage>
+                        <FormErrorMessage>password Wrong</FormErrorMessage>
                     )}
                 </FormControl>
 
