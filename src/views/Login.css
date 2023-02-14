@@ -1,0 +1,31 @@
+.register-container {
+    width: 50%;
+  }
+  .register-container h2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .button-container button {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .button-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .center-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* border: 1px solid red; */
+  }
+  .button-container {
+    /* margin: 5px; */
+    display: flex;
+    justify-content: space-around;
+  }
+  

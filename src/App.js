@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./views/Home";
+import Login from "./views/Login";
+import Register from './views/Register'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
 }
 
 export default App;
+
+
+// import toast, { Toaster } from 'react-hot-toast';
+
+// //const notify = () => toast('Here is your toast.');
+
+
+
+// const App = () => {
+
+//   const handlerClick = () => {
+//     toast.success('clcick')
+//   }
+//   return (
+//     <div>
+//       <button onClick={handlerClick}>Make me a toast</button>
+//       {/* <Toaster /> */}
+//     </div>
+//   );
+// }
+// export default App;
