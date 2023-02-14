@@ -11,8 +11,6 @@ import {
 import { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./Login.css";
-
 function Login() {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -26,7 +24,7 @@ function Login() {
 
     let isError = false;
     let isPasswordError = false;
-    let isLogin = userName == uName && password === pswrd;
+    let isLogin = userName === uName && password === pswrd;
     const handlerLogin = () => {
         {
             if (isLogin) {
@@ -51,7 +49,9 @@ function Login() {
     return (
         <div className="center-div">
             <div className="register-container">
-                {console.log({ uName })}{console.log({ pswrd })}<h2>Login</h2>
+                {console.log({ uName })}
+                {console.log({ pswrd })}
+                <h2>Login</h2>
                 <FormControl isInvalid={isError}>
                     <FormLabel>Username</FormLabel>
                     <Input
